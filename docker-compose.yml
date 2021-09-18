@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  learning.api:
+    image: ${DOCKER_REGISTRY-}learningapi
+    build: 
+      context: .
+      dockerfile: Learning.API/Dockerfile
+
+    ports:
+    - "3400:80"
+
