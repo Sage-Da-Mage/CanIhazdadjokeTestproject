@@ -1,6 +1,31 @@
 version: '3.4'
 
 services:
+
+  # Here is the code for setting up a postgresSQL server in our Docker Container through the Docker-Compose file
+  database:
+    # The Official Postgres image from DockerHub (we are using the last version)
+    image: 'postgres:latest'
+
+    #By default, a postgres database is running on the 5432 ports:
+  
+    # If we want to acess the database from our computer (outside of the docker container)
+    # We must share the port with our computer's ports:
+    # The Syntax is [port we want on our machine]:[port we want to retrieve in the container]
+    
+    # Note: You are free to change your computer's port
+    # If you do this you must take into consideration that it will change the way you are connecting to the database.
+
+    ports:
+    - 5432:5432
+
+    environment:
+        POSTGRES_USER: username #The user of the PostgresSQL server (helps to connect to the database)
+        POSTGRES_PASSWORD: password # The PostgresSQL password (helps to connect to the database)
+        POSTGRES_DB: default_database # The PostgressSQL default database (automatically created at the first launch)
+
+
+# Below is the code that was auto-generated with the creation of the docker-compose file.
   learning.api:
     image: ${DOCKER_REGISTRY-}learningapi
     build: 
@@ -9,4 +34,9 @@ services:
 
     ports:
     - "3400:80"
+   
+    environment: 
+        ConnectionStrings__DBCONNECTION_STRING: "Server=postgres_image; Database = default_Database; UserId = username; Password = password"
+
+
 

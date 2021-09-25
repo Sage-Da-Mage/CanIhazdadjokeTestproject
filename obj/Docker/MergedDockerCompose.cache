@@ -1,4 +1,13 @@
 services:
+  database:
+    environment:
+      POSTGRES_DB: default_database
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: username
+    image: postgres:latest
+    ports:
+    - published: 5432
+      target: 5432
   learning.api:
     build:
       context: C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning
@@ -6,6 +15,8 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
+      ConnectionStrings__DBCONNECTION_STRING: Server=postgres_image; Database = default_Database;
+        UserId = username; Password = password
     image: learningapi
     ports:
     - published: 3400

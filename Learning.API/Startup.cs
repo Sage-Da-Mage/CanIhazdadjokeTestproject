@@ -1,7 +1,9 @@
+using Learning.API.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,6 +31,10 @@ namespace Learning.API
 
             // This line is to add the HttpClient factory into our depanzian injection
             services.AddHttpClient();
+
+            // The below two lines add the PostgresSQL database to the project
+            var connectionString = Configuration.GetConnectionString("DB_CONNECTION_STRING");
+            services.AddDbContext<MyContext>(options => options.UseNpgsql(connectionString));
 
         }
 

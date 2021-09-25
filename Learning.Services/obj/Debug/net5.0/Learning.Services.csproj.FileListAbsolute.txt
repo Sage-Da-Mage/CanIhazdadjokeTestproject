@@ -1,4 +1,6 @@
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\bin\Debug\net5.0\Learning.Services.deps.json
+C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\bin\Debug\net5.0\Learning.Services.runtimeconfig.json
+C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\bin\Debug\net5.0\Learning.Services.runtimeconfig.dev.json
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\bin\Debug\net5.0\Learning.Services.dll
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\bin\Debug\net5.0\ref\Learning.Services.dll
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\bin\Debug\net5.0\Learning.Services.pdb
@@ -15,6 +17,4 @@ C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\L
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\obj\Debug\net5.0\Learning.Services.dll
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\obj\Debug\net5.0\ref\Learning.Services.dll
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\obj\Debug\net5.0\Learning.Services.pdb
-C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\bin\Debug\net5.0\Learning.Services.runtimeconfig.json
-C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\bin\Debug\net5.0\Learning.Services.runtimeconfig.dev.json
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Services\obj\Debug\net5.0\Learning.Services.genruntimeconfig.cache

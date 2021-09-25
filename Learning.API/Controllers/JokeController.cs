@@ -18,15 +18,19 @@ namespace Learning.API.Controllers
     [ApiController]
     public class JokeController : ControllerBase
     {
-
         private static readonly HttpClient client = new HttpClient();
 
 
+        private readonly MyContext _context;  
+        public JokeController(MyContext context)
+        {
+            _context = context;
+        }
+
         // The Endpoint Joke -- Returns a single joke with an Id, Joke message and the time it was retrieved
         [HttpGet]
-        public async Task<ActionResult<EntityJoke>> GetJoke()
+        public async Task<ActionResult<EntityJoke>> GetJoke(MyContext context)
         {
-
             // Get a joke (URL needed https://icanhazdadjoke.com/)
             // The following four lines set up the client so that I can retrieve 
             client.DefaultRequestHeaders.Accept.Clear();
@@ -48,19 +52,19 @@ namespace Learning.API.Controllers
             // Save joke and UTC time to a database
             //{
 
-            // Add an entity to the sql database
+            // Add an entity to the postgress sql database
             EntityJoke joke;
-            using (var context = new MyContext())
-            {
-                joke = new EntityJoke();
-                joke.Message = deserializedJoke.joke;
-                joke.Time = utcTime;
+            
+            // Comenting out old using code
+            //using (var context = new MyContext(new DbContextOptions<MyContext>()))
+                                    
+            joke = new EntityJoke();
+            joke.Message = deserializedJoke.joke;
+            joke.Time = utcTime;
 
+            _context.EntityJokes.Add(joke);
+            await _context.SaveChangesAsync();
 
-                context.EntityJokes.Add(joke);
-                await context.SaveChangesAsync();
-
-            }
             //}
 
             // Return the joke
@@ -104,17 +108,20 @@ namespace Learning.API.Controllers
                 // Save joke and UTC time to a database
                 //{
 
-                // Add an entity to the sqlite database
+                // Add an entity to the database
                 EntityJoke joke;
-                using (var context = new MyContext())
+                
+                // Commenting out old using code
+                //using (var context = new MyContext(new DbContextOptions<MyContext>()))
                 {
+                    
                     joke = new EntityJoke();
                     joke.Message = deserializedJoke.joke;
                     joke.Time = utcTime;
 
 
-                    context.EntityJokes.Add(joke);
-                    await context.SaveChangesAsync();
+                    _context.EntityJokes.Add(joke);
+                    await _context.SaveChangesAsync();
 
                 }
                 //}
@@ -139,7 +146,7 @@ namespace Learning.API.Controllers
             // Takes all the jokes (plus some diagnostics?) and puts them in databasewhole
             //var databaseWhole = context.EntityJokes.ToListAsync();
             
-            var context = new MyContext();
+            var context = new MyContext(new DbContextOptions<MyContext>());
             
 
             // This line reads from the database from the newest entry (based on the Time variable)
@@ -156,14 +163,15 @@ namespace Learning.API.Controllers
             //Get the UTC time at the time of posting the joke
             DateTime utcTime = DateTime.UtcNow;
 
-            using (var context = new MyContext())
+            // Commenting out old using code
+            //using (var context = new MyContext(new DbContextOptions<MyContext>()))
             {
 
                 postJoke.Time = utcTime;
 
 
-                context.EntityJokes.Add(postJoke);
-                await context.SaveChangesAsync();
+                _context.EntityJokes.Add(postJoke);
+                await _context.SaveChangesAsync();
 
             }
 
@@ -193,7 +201,6 @@ namespace Learning.API.Controllers
     // (the joke itself) and the time it was retrieved from icanhazdadjoke
     public class EntityJoke
     {
-
         [Key]
         public Guid Id { get; set; }
         
@@ -201,21 +208,31 @@ namespace Learning.API.Controllers
         public string Message { get; set; }
         public  DateTime Time { get; set; }
 
+
     }
 
 
     // My Context I worked on with Jean to create a Database (sqlite) 
     public class MyContext : DbContext
     {
+
+        public MyContext(DbContextOptions<MyContext> options)
+            : base(options)
+        {
+        }
+
         public DbSet<EntityJoke> EntityJokes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            var DbPath = $"{path}/JokeDB.db";
+            // The below lines are from before I connected the postgres SQL database
+            // commented out for reference
 
-            optionsBuilder.UseSqlite($"Data Source={DbPath}");
+            //var folder = Environment.SpecialFolder.LocalApplicationData;
+            //var path = Environment.GetFolderPath(folder);
+            //var DbPath = $"{path}/JokeDB.db";
+
+            //optionsBuilder.UseSqlite($"Data Source={DbPath}");
         }
     }
 

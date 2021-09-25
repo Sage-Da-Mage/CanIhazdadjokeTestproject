@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.API", "Learning.API\Learning.API.csproj", "{9343968E-B563-42D7-9CC4-50B586A1AD16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.API", "Learning.API\Learning.API.csproj", "{9343968E-B563-42D7-9CC4-50B586A1AD16}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5B650C0F-CFB6-49DF-B9F4-737199377A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Services", "Learning.Services\Learning.Services.csproj", "{6D21BEF7-A12A-4647-8BCD-FFAEBA1BF496}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.Services", "Learning.Services\Learning.Services.csproj", "{6D21BEF7-A12A-4647-8BCD-FFAEBA1BF496}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Repo", "Learning.Repo\Learning.Repo.csproj", "{7E0EAD6A-F232-4E91-B586-F64EF914BD00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.Repo", "Learning.Repo\Learning.Repo.csproj", "{7E0EAD6A-F232-4E91-B586-F64EF914BD00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Models", "Learning.Models\Learning.Models.csproj", "{0AB0D665-017F-442F-8A5D-C9D53D43F8D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.Models", "Learning.Models\Learning.Models.csproj", "{0AB0D665-017F-442F-8A5D-C9D53D43F8D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

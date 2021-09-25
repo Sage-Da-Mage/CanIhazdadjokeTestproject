@@ -1,0 +1,49 @@
+services:
+  database:
+    environment:
+      POSTGRES_DB: default_database
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: username
+    image: postgres:latest
+    ports:
+    - published: 5432
+      target: 5432
+  learning.api:
+    build:
+      context: C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning
+      dockerfile: Learning.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Learning.API
+      target: base
+    container_name: Learning.API
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ConnectionStrings__DBCONNECTION_STRING: Server=postgres_image; Database = default_Database;
+        UserId = username; Password = password
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: learningapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/Learning.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 3400
+      target: 80
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.API:/app:rw
+    - C:\Users\Mirages1\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Mirages1\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mirages1\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\Mirages1\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning:/src:rw
+version: '3.4'

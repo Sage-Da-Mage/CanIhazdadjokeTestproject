@@ -1,4 +1,6 @@
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\bin\Debug\net5.0\Learning.Models.deps.json
+C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\bin\Debug\net5.0\Learning.Models.runtimeconfig.json
+C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\bin\Debug\net5.0\Learning.Models.runtimeconfig.dev.json
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\bin\Debug\net5.0\Learning.Models.dll
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\bin\Debug\net5.0\ref\Learning.Models.dll
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\bin\Debug\net5.0\Learning.Models.pdb
@@ -10,6 +12,4 @@ C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\L
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\obj\Debug\net5.0\Learning.Models.dll
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\obj\Debug\net5.0\ref\Learning.Models.dll
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\obj\Debug\net5.0\Learning.Models.pdb
-C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\bin\Debug\net5.0\Learning.Models.runtimeconfig.json
-C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\bin\Debug\net5.0\Learning.Models.runtimeconfig.dev.json
 C:\Users\Mirages1\Desktop\LaunchPad\DadJokes API Test Project\Project\Learning\Learning.Models\obj\Debug\net5.0\Learning.Models.genruntimeconfig.cache
